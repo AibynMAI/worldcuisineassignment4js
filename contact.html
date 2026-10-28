@@ -29,11 +29,11 @@
                 <li class="nav-item"><a class="nav-link" href="restaurants.html">Restaurants</a></li>
                 <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="register.html">Sign up</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 <main class="container py-5">
 
@@ -48,55 +48,81 @@
 
             <form class="row g-3" id="contactForm" novalidate>
 
-                <div class="col-md-6">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name">
+                <div class="col-12">
+                    <p class="step-indicator mb-0" id="stepIndicator">Step 1 of 2</p>
                 </div>
 
-                <div class="col-md-6">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email">
+                <!-- STEP 1 -->
+                <div class="col-12 form-step active" data-step="1">
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+
+                        <div class="col-12">
+                            <button type="button" class="btn btn-dark" id="nextBtn">Next</button>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="col-md-6">
-                    <label for="cuisine" class="form-label">Cuisine</label>
-                    <select class="form-select" id="cuisine">
-                        <option selected>Choose...</option>
-                        <option>Kazakh</option>
-                        <option>Italian</option>
-                        <option>Japanese</option>
-                        <option>Mexican</option>
-                        <option>Indian</option>
-                        <option>Korean</option>
-                    </select>
-                </div>
+                <!-- STEP 2 -->
+                <div class="col-12 form-step" data-step="2">
+                    <div class="row g-3">
 
-                <div class="col-md-6">
-                    <label for="dish" class="form-label">Dish</label>
-                    <div class="input-group">
-                        <span class="input-group-text">#</span>
-                        <input type="text" class="form-control" id="dish" placeholder="Pizza">
+                        <div class="col-md-6">
+                            <label for="cuisine" class="form-label">Cuisine</label>
+                            <select class="form-select" id="cuisine">
+                                <option selected>Choose...</option>
+                                <option>Kazakh</option>
+                                <option>Italian</option>
+                                <option>Japanese</option>
+                                <option>Mexican</option>
+                                <option>Indian</option>
+                                <option>Korean</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="dish" class="form-label">Dish</label>
+                            <div class="input-group">
+                                <span class="input-group-text">#</span>
+                                <input type="text" class="form-control" id="dish" placeholder="Pizza">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="message" class="form-label">Recommendation</label>
+                            <textarea class="form-control" id="message" rows="5"></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="confirm">
+                                <label class="form-check-label" for="confirm">
+                                    I confirm my recommendation.
+                                </label>
+                                <div class="invalid-feedback" id="confirmError"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="button" class="btn btn-outline-dark" id="backBtn">Back</button>
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+
                     </div>
                 </div>
 
                 <div class="col-12">
-                    <label for="message" class="form-label">Recommendation</label>
-                    <textarea class="form-control" id="message" rows="5"></textarea>
-                </div>
-
-                <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="confirm">
-                        <label class="form-check-label" for="confirm">
-                            I confirm my recommendation.
-                        </label>
-                        <div class="invalid-feedback" id="confirmError"></div>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <button type="submit" class="btn btn-dark">Submit</button>
-                    <button type="reset" class="btn btn-outline-secondary">Clear</button>
+                    <button type="button" class="btn btn-outline-secondary" id="resetBtn">Reset</button>
                 </div>
 
             </form>
@@ -106,13 +132,14 @@
 
 </main>
 
+
 <footer class="world-footer py-4 mt-5">
     <div class="container text-center">
         <p class="text-white mb-1">
             Team: Toretay Ali, Kassym Mansur, Mukhametsharip Aibyn
         </p>
         <p class="text-white-50 mb-0">
-            SE-2504 | World Cuisine | Front-End Assignment 4
+            SE-2504 | World Cuisine | Front-End Assignment 5
         </p>
     </div>
 </footer>

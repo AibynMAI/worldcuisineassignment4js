@@ -869,3 +869,112 @@ body { transition: background-color 0.5s ease; }
     cursor: pointer;
 }
 .popup-close:hover { color: var(--accent); }
+/* ===== ASSIGNMENT 5 ===== */
+
+/* animations */
+@keyframes pop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.05) translateY(-4px); }
+    100% { transform: scale(1); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.pop     { animation: pop 0.4s ease; }
+.fade-in { animation: fadeIn 0.4s ease; }
+
+/* keyboard focus on menu */
+.world-navbar .nav-link:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* Read more (Countries) */
+.mq-card { padding: 20px; }
+.more-text { display: none; margin-top: 12px; }
+
+/* dish rating (Dishes) */
+.gallery-item .rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 4px 10px;
+    background-color: rgba(20, 20, 20, 0.75);
+    border-radius: 20px;
+}
+.star {
+    color: #bbbbbb;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+.star:hover  { transform: scale(1.25); }
+.star.active { color: #f5b301; }
+.rating-value {
+    margin-left: 6px;
+    color: #ffffff;
+    font-size: 0.8rem;
+}
+
+/* recipe filter (Recipes) */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter-btn.active {
+    background-color: var(--dark);
+    border-color: var(--dark);
+    color: #ffffff;
+}
+
+/* restaurants */
+.restaurant-rating { color: #f5b301; font-weight: 600; }
+
+/* multi-step form (Contact) */
+.form-step { display: none; }
+.form-step.active { display: block; }
+.step-indicator {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* NIGHT THEME */
+body.night {
+    --background: #15161a;
+    --text: #ececea;
+    --muted: #a8a9a3;
+    --border: #34363c;
+    --accent-light: #3a2a24;
+}
+body.night .card,
+body.night .mq-card,
+body.night .recipe-box,
+body.night .form-box,
+body.night .datetime-box,
+body.night .faq-item,
+body.night .popup-window,
+body.night .gallery-item {
+    background-color: #202228;
+}
+body.night .carousel-section { background-color: #1b1c20; }
+body.night .form-control,
+body.night .form-select,
+body.night .input-group-text {
+    background-color: #2a2c33;
+    color: #ececea;
+    border-color: #3c3f47;
+}
+body.night .text-secondary { color: #a8a9a3 !important; }
+body.night .btn-outline-dark { color: #ececea; border-color: #ececea; }
+body.night .btn-outline-dark:hover { background-color: #ececea; color: #15161a; }
+body.night .btn-dark,
+body.night .filter-btn.active {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+}
